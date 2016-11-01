@@ -54,7 +54,147 @@
   Open-Source Software.
 \end{annotation}
 
-\section{What is Functional Programming?}
+\section{The Four Programming Paradigms}
+
+\txtframe{\Huge The Four Paradigms}
+
+\begin{frame}
+%%%\frametitle{The Four Paradigms}
+\bc
+\begin{tabular}{@{}c|c@{}}
+\begin{tabular}[t]{@{}c@{}}
+{\huge Imperative} \\
+\uncover<2->{Fortran, 1953{\slash}1957} \\
+\uncover<2->{Algol, 1958{\slash}1960}
+\end{tabular}
+&
+\begin{tabular}[t]{@{}c@{}}
+{\huge Object-Oriented} \\
+\uncover<2->{Simula, 1967}
+\end{tabular}
+\\
+\hline
+\\
+\begin{tabular}[t]{@{}c@{}}
+{\huge Logic} \\
+\uncover<2->{Planner, 1969} \\
+\uncover<2->{Prolog, 1972}
+\end{tabular}
+&
+\begin{tabular}[t]{@{}c@{}}
+{\huge Functional} \\
+\uncover<2->{Lisp, 1958{\slash}1962}
+\end{tabular}
+\end{tabular}
+\ec
+\begin{annotation}
+To see how functional programming (FP) fits into the overall
+scheme of programming languages, I'll introduce the concept of
+\emph{The Four Programming Paradigms}, which you might already
+have encountered.  Under this concept, there are four main ways
+of programming:
+\bd
+\item[Imperative Programming] A program is thought of as
+a sequence of instructions to the computer to do things,
+typically to change (mutate) the data stored in variables by
+assignment (or to do input and output).
+Hence, \emph{Imperative}.  Typically, the data is organized into
+data structures, like records and arrays, and the instructions
+are organized into what are variously called subroutines,
+functions, or procedures (with some mechanism for passing
+arguments).  Hence, this is sometimes also referred to
+as \emph{Procedural Programming}.  There are also control
+structures, like conditionals and loops, to execute instructions
+selectively or repetitively (\emph{iteration}).
+
+\item[Object-Oriented Programming] A running program is thought of as a
+collection of \emph{objects}, which bundle data and procedures
+(usually called \emph{methods}).  The program runs by the
+objects sending messages to each other to invoke methods.  Aside
+from this object-oriented organizing principle, an
+object-oriented program works much like an imperative program,
+by mutating the state of objects, with conditionals and loops.
+
+\item[Logic Programming]  A program is thought of as collection
+of \emph{facts} and inference \emph{rules} in some formal logic
+notation.  The program runs essentially by (multi-step)
+inferences from the facts using the rules, to produce new
+(useful) facts.
+
+\item[Functional Programming]  A program is thought of as
+a collection of \emph{functions} (sometimes confusingly
+called \emph{procedures}).  The program runs by functions
+invoking functions, often recursively.  The emphasis is on the
+values computed by the functions, not on any side-effects of
+mutating variables.  In some functional programming languages
+such side-effects are expressly forbidden (these are
+called \emph{pure}); in others (\emph{impure}), side-effects are
+allowed, but are generally discouraged.  Characteristic of
+functional programming languages is that functions are ``first
+class'', that is, they can be treated much as data in imperative
+languages: they can be passed as arguments to functions,
+computed and returned as results from functions, and stored into
+data-structures.  This leads to very powerful programming
+techniques.  Also characteristic of functional programming
+languages is the use of recursion instead of iteration.  Even
+when they provide iterative constructs, they are usually just
+syntactic sugar for some underlying recursive schema.
+\ed
+As you can see from the various programming languages mentioned
+in the slide, these Four Paradigms go back to the early,
+sometimes very early, days of modern computing.  The years
+mentioned are only indicative.  A single year is typically the
+year in which the language was first released, with a working
+compiler or interpreter.  Where there are two years, like
+1958{\slash}1962 for Lisp, the first year is when there was a
+substantial proposal or design for the language, and the second
+is the year of first release of a working compiler or
+interpreter.
+
+Obviously, there are no sharp boundaries between these
+paradigms, and the languages that claim them.  It's largely a
+matter of emphasis.  Even a low-level, notionally imperative
+language like C provides some limited capabilities for doing
+functional programming.  The first implementation of what we
+would call logic programming was done as an implementation of
+Planner embedded inside Lisp, an impure functional language
+which also supports imperative constructs.  The pure functional
+language Haskell provides constructs which permit programming in
+an imperative style where appropriate (although these constructs
+are ultimately defined in pure functional terms).  There's
+interest in adapting ``advanced'' functional techniques like
+monads to languages like Javascript.  These cross-over examples
+can be multiplied almost endlessly.
+
+Even though there is a lot of cross-over, The Four Paradigms
+provide a useful frame of reference, and most programming
+languages can be seen as fitting into one or other of these
+paradigms (with varying strictness), or of providing
+capabilities from the paradigms.
+
+As mentioned, imperative and object-oriented programming
+typically use iteration (loops), while functional and logic
+programming typically use recursion.  While Algol'60 is
+notionally an imperative language, I point out as something of
+an historical anecdote that in the Algol'60 report (the defining
+document for the language), iteration by the \texttt{while} loop
+is actually defined in terms of recursion.  In a way, this is
+not surprising, since one of the co-authors of the Algol'60
+report was John McCarthy, who was also creator of the functional
+language Lisp.
+\end{annotation}
+\end{frame}
+
+\txtframe{\Huge Declarative Programming}
+\begin{annotation}
+Functional programming and logic programming are often
+collectively referred to as \emph{declarative programming},
+since the emphasis is on declaring the functional or
+logical relationships in the program, and not so much on the
+step-by-step execution of the program through changing state.
+\end{annotation}
+
+\section{Functional Programming}
 
 \txtframe{\Huge Functional Programming}
 
@@ -68,25 +208,6 @@
 \begin{annotation}
 Stuff.
 \end{annotation}
-
-\section{The Four Programming Paradigms}
-
-\txtframe{\Huge The Four Paradigms}
-
-\begin{frame}
-%%%\frametitle{The Four Paradigms}
-\bc
-\Large
-\begin{tabular}{r | l}
-Imperative & Object-Oriented \\
-\hline
-Logic & Functional
-\end{tabular}
-\ec
-\begin{annotation}
-Stuff.
-\end{annotation}
-\end{frame}
 
 \begin{frame}
 \frametitle{History}

@@ -323,21 +323,43 @@ Say something about Haskell.
 \bi
 \item concise, clean notation
 \item strong static typing
-\bi
-\item type inference
-\ei
 \item pattern matching
-\item polymorphism
-\item abstract datatypes
 \item currying
 \item lazy evaluation
+\item ``no side-effects''
+\item monads \& IO
+\item compiled --- good performance achievable
+\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{Haskell's type system}
 \bi
-\item ``infinite'' data structures
+\item strong static typing
+\item type inference
+\item polymorphism
+\item abstract datatypes
+\item typeclasses
+\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{Lazy evaluation}
+\bi
+\item evaluation ``by need''
+\item allows ``infinite'' data structures
 \item strict evaluation possible
 \ei
-\item no side-effects
-\item monads
-\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{Maybe monad and failure}
+\lstinputlisting{MaybeStuff.hs}
+\end{frame}
+
+\begin{frame}
+\frametitle{IO monad and IO actions}
+\lstinputlisting{Hello.hs}
 \end{frame}
 
 \section{FP and FOSS}

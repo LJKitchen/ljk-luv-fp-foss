@@ -1,0 +1,8 @@
+%
+\newcommand{\picframe}[2][0.8]{\frame<presentation>[plain]{\bc\includegraphics[width=#1\textwidth]{#2}\ec}}
+\newcommand{\figframe}[4][0.8]{\frame[plain]{\begin{figure}\begin{center}\includegraphics[width=#1\linewidth]{#2}\end{center}\only<article>{\caption{#4}}\label{#3}\end{figure}}}
+\newcommand{\txtframe}[1]{\frame<presentation>[plain]{\bc#1\ec}}
+\newenvironment{annotation}%
+{\begin{onlyenv}<article>%
+  \par\noindent\hrulefill\quad\raisebox{-0.5ex}{Notes}\quad\hrulefill\smallskip\par\noindent}
+{\smallskip\par\noindent\hrule\end{onlyenv}}

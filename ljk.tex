@@ -1,0 +1,40 @@
+%
+\newcommand{\hide}[1]{}% Make things disappear
+%
+% Comments to be supressed for final version
+% Conflicted with \comment in html.sty, so made \Comment
+\newcommand{\Comment}[1]{{{$\Longrightarrow$} #1 {$\Longleftarrow$}}}
+%
+\newcommand{\signoff}[1]% Sign-off lines, with #1 date
+{%
+\begin{flushright}
+Les Kitchen, #1
+\end{flushright}%
+}
+%
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+% Causes conflict with picinpar package
+%%%\newcommand{\br}{\begin{flushright}}
+%%%\newcommand{\er}{\end{flushright}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bd}{\begin{description}}
+\newcommand{\ed}{\end{description}}
+\newcommand{\bv}{\begin{verse}}
+\newcommand{\ev}{\end{verse}}
+%
+\newcommand{\lb}{\linebreak[0]}
+%
+\def\monthname{\ifcase\month\or
+	January\or February\or March\or April\or May\or June\or
+	July\or August\or September\or October\or November\or December\fi}
+\renewcommand{\today}{\number\day\ \monthname\ \number\year}
+\newcommand{\dated}[1]% Force a particular date
+{\renewcommand{\today}{#1}}
+%
+\newcommand{\pg}[1]{\paragraph*{#1}}
+\newcommand{\T}[1]{\texttt{#1}}
+\newcommand{\TT}[1]{\begin{verse}\texttt{#1}\end{verse}}

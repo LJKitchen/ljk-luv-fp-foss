@@ -203,8 +203,13 @@ step-by-step execution of the program through changing state.
 
 \begin{frame}
 \frametitle{Functional Programming}
+Programming with ``first class'' functions
 \bi
-\item Programming with ``first class'' functions
+\item functions as function arguments
+\item functions as function results
+\item functions as data
+\item ``higher order'' functions
+\item abstraction of data and control
 \ei
 \end{frame}
 
@@ -286,16 +291,28 @@ Stuff.
 \lstinputlisting{mapfl.scm}
 \end{frame}
 
-\section{Quick tour of FP Zoo}
+\section{Quick sample tour of FP Zoo}
 
 \begin{frame}
 \frametitle{Scala}
+\bi
+\item Developed by Martin Odersky from 2001
+\item ``General-purpose'', but strong support for FP
+\item Java-like syntax
+\item JVM
+\ei
 Say something about Scala.
 \end{frame}
 
 \begin{frame}
 \frametitle{Clojure}
-Say something about Clojure.
+\item Developed by Rich Hickey, 2007
+\item Lisp-like syntax
+\item JVM
+\item Strong emphasis on immutability
+\bi
+\item persistent data structures
+\ei
 \end{frame}
 
 \begin{frame}
@@ -371,14 +388,27 @@ Say something somwhere about lambda expressions.
 
 \begin{frame}
 \frametitle{FP and FOSS}
-Sketch out the various FP projects{\slash} languages, their
-licences and packages.
+\bi
+\item Haskell
+\bi
+\item GHC --- BSD 3-clause
+\item Hugs --- BSD
+\item Haskell Platform --- BSD
+\ei
+\item Clojure --- Eclipse Public Licence
+\item Scala --- BSD 3-clause
+\item Scheme --- Guile, LGPL; Racket, LGPL
+\item Mercury --- GPL{\slash}LGPL
+\item many others
+\ei
 \end{frame}
 
 \begin{frame}
 \frametitle{Summary}
 \bi
-\item summary
+\item FP context and history
+\item FP advantages and characteristics
+\item FP FOSS implementations
 \ei
 \medskip
 {\scriptsize Produced using the {\LaTeX} Beamer package, along

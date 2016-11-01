@@ -11,6 +11,7 @@
 
 \usepackage{graphicx}
 \usepackage[english]{babel}
+\usepackage{listings}
 
 \input{ljk.tex}
 \input{ljk-bmr.tex}
@@ -21,8 +22,10 @@
 %%%\subtitle{Something}
 
 \author{Les Kitchen \\
-  Department of Computing and Information Systems \\
-  University of Melbourne}
+  {\small Department of Computing and Information Systems} \\
+  University of Melbourne \\
+  Linux Users of Victoria \\
+  \texttt{luv-fp-foss@po.ljk.id.au}}
 
 \date{2~November, 2016}
 
@@ -201,7 +204,7 @@ step-by-step execution of the program through changing state.
 \begin{frame}
 \frametitle{Functional Programming}
 \bi
-\item Programming with functions
+\item Programming with ``first class'' functions
 \ei
 \end{frame}
 
@@ -210,14 +213,70 @@ Stuff.
 \end{annotation}
 
 \begin{frame}
-\frametitle{History}
+\frametitle{FP variations}
 \bi
-\item History
+\item pure versus impure
+\item static versus dynamic typing
+\item lazy versus eager evaluation
+\item lexical versus dynamic binding
+\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{FP ``extremes''}
+\bi
+\item Traditional Lisp
+\bi
+\item impure, dynamic typing, eager evaluation, dynamic binding
+\ei
+\item Haskell
+\bi
+\item pure, static typing, ``lazy'' evaluation, lexical binding
+\ei
+\ei
+\end{frame}
+
+\section{History of FP}
+
+\begin{frame}
+\frametitle{Sketch history of FP}
+\bi
+\item Alonzo Church, $\lambda$-calculus, 1930s
+\item John McCarthy, Lisp, 1950s
+\item various Lisp-like languages
+\bi
+\item Scheme (1970s), Common Lisp (1980s), Clojure (2000s)
+\ei
+\item statically typed FP languages
+\bi
+\item ML, SML, Miranda, OCaml, Haskell
+\ei
+\item also: Erlang, Scala
 \ei
 \begin{annotation}
 Stuff.
 \end{annotation}
 \end{frame}
+
+\section{Why FP?}
+
+\section{Simple examples}
+
+\begin{frame}
+\frametitle{mapfl in Haskell}
+\lstinputlisting[language=Haskell]{Mapfl.hs}
+\end{frame}
+
+\begin{frame}
+\frametitle{mapfl in Scheme}
+\lstinputlisting{mapfl.scm}
+\end{frame}
+
+\section{Tour of FP Zoo}
+
+\section{Haskell}
+
+\section{FP and FOSS}
 
 \begin{frame}
 \frametitle{Summary}

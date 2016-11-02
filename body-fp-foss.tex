@@ -188,7 +188,7 @@ language Lisp.
 \end{annotation}
 \end{frame}
 
-\txtframe{\Huge Declarative Programming}
+%%%\txtframe{\Huge Declarative Programming}
 \begin{annotation}
 Functional programming and logic programming are often
 collectively referred to as \emph{declarative programming},
@@ -245,6 +245,7 @@ Stuff.
 
 \begin{frame}
 \frametitle{Sketch history of FP}
+\framesubtitle{60 years in the making, or longer...}
 \bi
 \item Alonzo Church, $\lambda$-calculus, 1930s
 \item John McCarthy, Lisp, 1950s
@@ -310,11 +311,12 @@ Stuff.
 \item Lisp-like syntax
 \item JVM
 \bi
-\item Clojurescript --- Javascript
+\item Clojurescript $\longrightarrow$ Javascript
 \ei
-\item Strong emphasis on immutability
-\item Concurrency
+\item Strong emphasis on
 \bi
+\item immutability
+\item concurrency
 \item persistent data structures
 \ei
 \ei
@@ -324,7 +326,10 @@ Stuff.
 \frametitle{Haskell}
 \bi
 \item Started by committee, 1987{\slash}1990
-\item Pure
+\bi
+\item {\small Simon Peyton-Jones, Phil Wadler, John Hughes, \ldots}
+\ei
+\item Pure --- ``referential transparency''
 \item Strong statically typed
 \item Non-strict (``lazy'') evaluation
 \item GHC compiler: multi-target + Javascript
@@ -336,7 +341,7 @@ Stuff.
 \frametitle{Worth mentioning}
 \bi
 \item Common Lisp
-\item Scheme (Guile)
+\item Scheme (Guile, Racket)
 \item OCaml
 \item Clean
 \item Mercury
@@ -379,61 +384,11 @@ All on Meetup:
 \item clj-melb (Clojure)
 \item Melbourne Scala User Group, MSUG
 \ei
-Recent Compose Melbourne FP event.
-\end{frame}
-
-\section{Haskell}
-
-\begin{frame}
-\frametitle{Characteristics of Haskell}
+Recent Compose Melbourne FP event, videos available.
 \bi
-\item concise, clean notation
-\item strong static typing
-\item pattern matching
-\item currying
-\item lazy evaluation
-\bi
-\item not unlike Unix pipelines
+\item \url{http://www.composeconference.org/}
+\item videos: search for ``compose melbourne'' on Youtube
 \ei
-\item ``no side-effects''
-\item monads \& IO
-\item compiled --- good performance achievable
-\ei
-\end{frame}
-
-\begin{frame}
-\frametitle{Haskell's type system}
-\bi
-\item strong static typing
-\item type inference
-\item polymorphism
-\item abstract datatypes
-\item typeclasses
-\ei
-\end{frame}
-
-\begin{frame}
-\frametitle{Lazy evaluation}
-\bi
-\item evaluation ``by need''
-\item allows ``infinite'' data structures
-\item strict evaluation possible
-\ei
-\end{frame}
-
-\begin{frame}
-\frametitle{Maybe monad and failure}
-\lstinputlisting{MaybeStuff.hs}
-\end{frame}
-
-\begin{frame}
-\frametitle{IO monad and IO actions}
-\lstinputlisting{Hello.hs}
-\end{frame}
-
-\begin{frame}
-\frametitle{Lambda expressions}
-Say something somwhere about lambda expressions.
 \end{frame}
 
 \section{FP and FOSS}
@@ -455,6 +410,82 @@ Say something somwhere about lambda expressions.
 \ei
 \end{frame}
 
+\section{Haskell}
+
+\begin{frame}
+\frametitle{Characteristics of Haskell}
+\bi
+\item concise, clean notation
+\item strong static typing
+\item pattern matching
+\item currying
+\item lazy evaluation
+\item ``no side-effects''
+\item monads \& IO
+\item compiled --- good performance achievable
+\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{Haskell's type system}
+\bi
+\item strong static typing
+\item type inference
+\item polymorphism
+\item abstract datatypes
+\item typeclasses
+\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{Lazy evaluation}
+\bi
+\item evaluation ``by need''
+\item not unlike Unix pipelines
+\item allows ``infinite'' data structures, \texttt{[1..]}
+\item strict evaluation possible
+\ei
+\end{frame}
+
+\begin{frame}
+\frametitle{Maybe monad and failure}
+\lstinputlisting{MaybeStuff.hs}
+\end{frame}
+
+\begin{frame}
+\frametitle{IO monad and IO actions}
+\lstinputlisting{Hello.hs}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lambda expressions \& currying}
+\lstinputlisting{NoLambdaExample.hs}
+\lstinputlisting{WithLambdaExample.hs}
+\lstinputlisting{MapLambdaExample.hs}
+\end{frame}
+
+\begin{frame}
+\frametitle{Tail-call optimization}
+Straight recursive version:
+\lstinputlisting{RecFac.hs}
+Tail-recursive version:
+\lstinputlisting{TailFac.hs}
+\end{frame}
+
+\begin{frame}
+\frametitle{Haskell downsides}
+\bi
+\item Lazy evaluation:
+\bi
+\item run-time overhead
+\item hard to predict resource usage
+\item (used to make debugging difficult)
+\item solution: judicious use of strictness and compiler optimizations
+\ei
+\item Monads don't compose well
+\ei
+\end{frame}
+
 \begin{frame}
 \frametitle{Summary}
 \bi
@@ -462,6 +493,8 @@ Say something somwhere about lambda expressions.
 \item FP advantages and characteristics
 \item FP FOSS implementations
 \ei
+Work in progress: \\
+{\small \url{https://github.com/LJKitchen/ljk-luv-fp-foss}}
 \medskip
 {\scriptsize Produced using the {\LaTeX} Beamer package, along
   with other free-software programs.}

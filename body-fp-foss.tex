@@ -448,6 +448,12 @@ Recent Compose Melbourne FP event, videos available.
 \end{frame}
 
 \begin{frame}
+\frametitle{Control structures by lazy evaluation}
+If-Then-Else as an ordinary function:
+\lstinputlisting{IfThenElse.hs}
+\end{frame}
+
+\begin{frame}
 \frametitle{Maybe monad and failure}
 \lstinputlisting{MaybeStuff.hs}
 \end{frame}
@@ -455,6 +461,9 @@ Recent Compose Melbourne FP event, videos available.
 \begin{frame}
 \frametitle{IO monad and IO actions}
 \lstinputlisting{Hello.hs}
+\texttt{main} has a value of type \texttt{IO~a} which is a
+description of the intended input-output behavior of the
+program, lazily realised.
 \end{frame}
 
 \begin{frame}
@@ -482,6 +491,7 @@ Tail-recursive version:
 \item (used to make debugging difficult)
 \item solution: judicious use of strictness and compiler optimizations
 \ei
+\item Sometimes confusing error messages
 \item Monads don't compose well
 \ei
 \end{frame}
